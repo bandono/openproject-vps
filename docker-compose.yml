@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:17
+    container_name: openproject-postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  openproject:
+    image: openproject/openproject:16
+    container_name: openproject
+    restart: unless-stopped
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    volumes:
+      - op_data:/var/openproject/assets
+
+volumes:
+  pg_data:
+  op_data:
