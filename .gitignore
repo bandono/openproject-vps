@@ -2,4 +2,5 @@
 .claude*
 .config*
 sessions*
-api-call-poc
+api-call-poc*
+tmp/*
