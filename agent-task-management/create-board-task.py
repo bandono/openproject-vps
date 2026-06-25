@@ -9,7 +9,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 CONFIG_PATH = Path(__file__).parent.parent / ".config" / "client-settings.json"
-LANE_PATH = Path(__file__).parent / "lane-settings.json"
+LANE_PATH = Path(__file__).parent / "board-settings.json"
 
 config = json.loads(CONFIG_PATH.read_text())
 LANES = json.loads(LANE_PATH.read_text())
@@ -99,7 +99,7 @@ def add_wp_to_lane(
     position: int = 0,
     retries: int = 3,
 ):
-    query_id = LANES[lane_name]
+    query_id = LANES[lane_name]['query_id']
 
     for attempt in range(retries):
         try:

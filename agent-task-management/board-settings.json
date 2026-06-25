@@ -1,0 +1,22 @@
+{
+  "Long List": {
+    "query_id": 40,
+    "status_id": 1
+  },
+  "Sprint Backlog": {
+    "query_id": 41,
+    "status_id": 1
+  },
+  "WIP": {
+    "query_id": 42,
+    "status_id": 7
+  },
+  "Ready": {
+    "query_id": 43,
+    "status_id": 8
+  },
+  "Done": {
+    "query_id": 45,
+    "status_id": 10
+  }
+}
